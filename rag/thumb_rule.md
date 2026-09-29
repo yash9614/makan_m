@@ -157,3 +157,48 @@ Thumb rule:
 - want a dedicated vector engine + dashboard → **Qdrant** (what you have)
 - want cache + light vectors → **Redis Stack**
 - want classic relational only → **MySQL**, not a vector DB
+
+- ---
+
+Yes. You do not need to install Postgres on Windows.
+
+**pgvector** is just an extension **inside Postgres**. The database can live somewhere else. Your Python app only needs a connection URL.
+
+## Options with no local Postgres install
+
+**1. Docker (most like your Qdrant setup)**  
+Postgres+pgvector runs in a container. Nothing is installed on the host except Docker.
+
+```bat
+docker run -d --name pgvector -e POSTGRES_PASSWORD=postgres -p 5432:5432 pgvector/pgvector:pg16
+```
+
+Your app talks to `localhost:5432`. That is not a native Windows install.
+
+**2. Hosted Postgres that already has pgvector**
+
+- Supabase
+- Neon
+- Timescale
+- some Railway / Render / RDS setups (enable the extension)
+
+Then in `.env`:
+
+```env
+DATABASE_URL=postgresql://user:pass@host:5432/dbname
+```
+
+No local DB at all.
+
+**3. Another machine**  
+Any remote Postgres with `CREATE EXTENSION vector;` works. Same idea: only a URL in the app.
+
+## What you still need locally
+
+- Docker **or** internet access to a hosted DB
+- Python packages (`psycopg`, LangChain pgvector helper, etc.)
+- The connection string
+
+You do **not** need the Postgres Windows installer, pgAdmin, or a local `C:\Program Files\PostgreSQL` tree.
+
+Thumb rule: if Qdrant worked for you via `docker compose` without installing Qdrant natively, pgvector works the same way with a Postgres container or a cloud URL.
