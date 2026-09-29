@@ -1,3 +1,8 @@
+how to run this fast API server?
+when is uvicorn main:app --reload used
+vs index.py or main.py
+just explain concisely and the thumb rule to run any fast api server despite the complex structure of files and Dbs
+
 ## What each file is
 
 | File | Job | Do you “run the API” with it? |
