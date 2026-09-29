@@ -1,1 +1,56 @@
 
+Both are normal. Industry practice is **not** “always scratch” or “always import JSON.” Teams mix them.
+
+## What people actually do
+
+**Start from a template / JSON when:**
+
+- the problem is common (Slack alert, Google Sheet sync, webhook → CRM, invoice parse)
+- you want the node wiring and error pattern, not a blank canvas
+- a vendor, colleague, or [n8n templates](https://n8n.io/workflows/) already solved 80%
+- you are learning n8n or demoing a pattern
+
+**Build from scratch when:**
+
+- the flow is company-specific (your auth, your schema, your approval chain)
+- credentials, base URLs, and field names will not match any public template
+- you need a small, clear workflow you can explain in review
+- security / compliance says “don’t paste random community JSON”
+
+**Typical real sequence:**
+
+1. Import a template or JSON to steal the *shape*
+2. Rip out sample credentials and hardcoded IDs
+3. Rebuild connections, env vars, and error handling for *your* stack
+4. Save that as *your* internal template
+
+That last copy is what teams reuse, not the public file unchanged.
+
+## JSON export in practice
+
+n8n workflows are JSON. Export/import is the official sharing format.
+
+Treat imported JSON like copied code:
+
+- read every node before activating
+- rotate any credentials that came with it (templates should not contain real secrets; some unofficial dumps do)
+- check webhook paths, URLs, and `HTTP Request` destinations
+- pin n8n version if the export is old (nodes get renamed)
+
+Internal practice that scales:
+
+- store JSON in git (`workflows/invoice-sync.json`)
+- one workflow = one job
+- credentials stay in n8n / env, not in the JSON
+- document trigger, input, output, and failure path
+
+## Thumb rule
+
+| Situation | Default |
+|---|---|
+| Learning or spike | Ready-made template / JSON |
+| Production for your company | Scratch, or template heavily rewritten |
+| Repeatable internal pattern | Your own exported JSON, versioned |
+| Client delivery | Template for speed, then customize and own it |
+
+Ready-made JSON is a **starting point**, not a finished production artifact. From-scratch is cleaner when the workflow is simple. Importing is faster when the graph is large and the pattern is known. Mature setups do both: import to move, then make the workflow theirs.
