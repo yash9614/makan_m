@@ -202,3 +202,131 @@ Any remote Postgres with `CREATE EXTENSION vector;` works. Same idea: only a URL
 You do **not** need the Postgres Windows installer, pgAdmin, or a local `C:\Program Files\PostgreSQL` tree.
 
 Thumb rule: if Qdrant worked for you via `docker compose` without installing Qdrant natively, pgvector works the same way with a Postgres container or a cloud URL.
+
+-----
+
+
+
+
+Docker has no project “cookies.” What eats disk is **images, stopped containers, build cache, and volumes**. Browser cookies for `localhost` are separate and tiny.
+
+## Now: free space safely
+
+In CMD:
+
+```bat
+docker compose -f D:\Downloads\rag_api\docker-compose.yml down
+docker disk usage
+```
+
+See what is large:
+
+```bat
+docker system df
+```
+
+Then delete unused engine data **except named volumes** (this keeps `sample_collection` if the Qdrant volume still exists):
+
+```bat
+docker container prune -f
+docker image prune -f
+docker builder prune -f
+```
+
+If you want the space back **and** you do not care about the indexed vectors:
+
+```bat
+cd /d D:\Downloads\rag_api
+docker compose down -v
+docker system prune -af
+```
+
+`-v` removes the Qdrant volume. You must run `python index.py` again later.
+
+Nuclear option (everything unused, all dangling images):
+
+```bat
+docker system prune -af --volumes
+```
+
+That can delete **other** projects’ volumes too. Use only if you understand that.
+
+Check again:
+
+```bat
+docker system df
+```
+
+## What not to delete if you want a fast restart
+
+| Keep | Why |
+|---|---|
+| Qdrant volume | Holds `sample_collection` |
+| `qdrant/qdrant` image | Avoids re-download |
+| `.venv` | Not Docker; don’t touch for “Docker cache” |
+
+`.venv`, `__pycache__`, and `.env` are not Docker cache.
+
+## Cookies (browser only)
+
+Optional, and it will not free any real disk:
+
+- Chrome/Edge: Settings → Privacy → Delete cookies for `localhost` / `127.0.0.1`
+- Or DevTools → Application → Storage → Clear site data on `http://localhost:6333` and `http://127.0.0.1:8000`
+
+Skip this unless a dashboard looks stuck logged in.
+
+## Future habits
+
+1. **Stop stacks when done**
+
+   ```bat
+   docker compose down
+   ```
+
+   Use `down -v` only when you want to wipe DB data.
+
+2. **Don’t `prune --volumes` on a schedule**  
+   That deletes databases. Prefer:
+
+   ```bat
+   docker builder prune
+   docker image prune
+   ```
+
+3. **One compose project per folder**  
+   `docker compose down` then only touches this project’s containers.
+
+4. **Re-index is the cost of wiping Qdrant**  
+   Volume gone ⇒ `python index.py` again ⇒ OpenAI embedding charges.
+
+5. **Watch disk occasionally**
+
+   ```bat
+   docker system df
+   ```
+
+6. **Keep `.venv` out of Docker**  
+   Your API venv is local. Clearing Docker does not shrink it. To reclaim *that* space you’d delete `.venv` and recreate it — only if you are done with the project.
+
+## Practical suggestion for this project
+
+You are done for now and want space, but may come back:
+
+```bat
+cd /d D:\Downloads\rag_api
+docker compose down
+docker builder prune -f
+docker image prune -f
+```
+
+That stops Qdrant, frees build/cache leftovers, and **keeps** the collection volume.
+
+If this was a one-off experiment:
+
+```bat
+docker compose down -v
+docker image rm qdrant/qdrant
+```
+
+Then only the code and `.venv` remain.
