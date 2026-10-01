@@ -497,6 +497,97 @@ curl -X POST http://127.0.0.1:8000/analysis/analyse/<contract_id>
 curl http://127.0.0.1:8000/analysis/contract/<contract_id>
 ```
 
+
+Stop the API first, then stop Mongo. Do not pass `-v` to Compose, and do not prune volumes, or the saved contracts and analyses go with the Mongo volume.
+
+## Stop the app
+
+In the terminal where `uvicorn` is running, press Ctrl+C once. Wait until you see the process exit. That only stops the Python server. It does not touch your code, `uploads/`, or Mongo.
+
+If it does not exit, press Ctrl+C again. Only if it is still stuck:
+
+```bash
+# from another terminal, only if Ctrl+C failed
+pkill -f "uvicorn app.main:app"
+```
+
+## Stop Docker, keep the data
+
+From the `vakil-vision` folder:
+
+```bash
+docker compose down
+```
+
+That stops and removes the `vakil_mongo` container and its Compose network. It keeps the named volume `vakil_mongo_data`, so contracts and analyses are still there the next time you run `docker compose up -d`.
+
+Do not run `docker compose down -v`. The `-v` flag deletes that volume.
+
+Your project files are never removed by Compose. Those stay on disk:
+
+- source code in `vakil-vision/`
+- `app/.env`
+- parsed uploads in `uploads/`
+
+## Start it again later
+
+```bash
+cd vakil-vision
+docker compose up -d
+uvicorn app.main:app --reload
+```
+
+Same database, same uploaded files.
+
+## Clear Docker cache without deleting this data
+
+Unused images and build cache are the usual space hogs. Volumes are the project data, so leave them alone.
+
+Check what is using space:
+
+```bash
+docker system df
+```
+
+Safe cleanup:
+
+```bash
+docker container prune
+docker image prune
+docker builder prune
+```
+
+- `container prune` removes stopped containers only.
+- `image prune` removes dangling images, not images a container is using.
+- `builder prune` removes BuildKit cache. This project barely builds anything, because Compose just pulls `mongo:7`, so this may free little.
+
+A broader but still volume-safe sweep:
+
+```bash
+docker system prune
+```
+
+That removes stopped containers, unused networks, dangling images, and build cache. It does not remove volumes unless you add `--volumes`.
+
+Skip these if you want the Vakil Vision database kept:
+
+```bash
+docker compose down -v
+docker volume prune
+docker system prune --volumes
+docker system prune -a --volumes
+```
+
+`docker volume prune` is the easy mistake. After `docker compose down`, no container is using `vakil_mongo_data`, so a volume prune treats it as unused and deletes it.
+
+To see that volume before any cleanup:
+
+```bash
+docker volume ls
+```
+
+You want `vakil_mongo_data` still listed when you are done.
+
 The id in those calls is the 24-character value from the upload response, not the filename.
 
 
