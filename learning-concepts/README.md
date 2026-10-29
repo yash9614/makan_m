@@ -18,6 +18,7 @@ Inspired by practical agentic AI engineering curricula.
 | 06 | Vector Databases & Chroma | [06-vector-dbs-chroma.md](06-vector-dbs-chroma.md) |
 | 07 | Multimodal Models | [07-multimodal.md](07-multimodal.md) |
 | 08 | Harness & Guardrails | [08-harness-and-guardrails.md](08-harness-and-guardrails.md) |
+| 09 | Notion | [09-notion.md](09-notion.md) |
 
 ---
 
