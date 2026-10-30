@@ -20,5 +20,6 @@ Central list of external GitHub repos and learning materials shared or used for 
 | [laxmimerit/Langchain-and-Ollama](https://github.com/laxmimerit/Langchain-and-Ollama) | laxmimerit | LangChain + Ollama tutorials | Local LLM, document loaders (Docling, MarkItDown) |
 | [yash9614/Nrish_Karik_SataDience/full-stack-ai-with-python](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/full-stack-ai-with-python) | yash9614 | Full-stack AI projects | RAG queue, voice agent, weather agent, LangGraph chat, memory, prompts |
 | [yash9614/Nrish_Karik_SataDience/generative-ai-mastery/Materials](https://github.com/yash9614/Nrish_Karik_SataDience/tree/main/generative-ai-mastery/Materials) | yash9614 | GenAI mastery materials | Vector DBs, LlamaIndex, fine-tuning, Chainlit, interview question creator |
+| [sourangshupal](https://github.com/sourangshupal) | sourangshupal | Production RAG & Agentic RAG | rag-qa-project, Agentic-RAG-project (arXiv curator), CrewAI trip planner |
 
 Update this file whenever a new useful repo is shared.
