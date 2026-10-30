@@ -25,6 +25,7 @@ Inspired by practical agentic AI engineering curricula (Telusko Agentic AI Engin
 | 13 | Evaluation & RAGAS | [13-evaluation-ragas.md](13-evaluation-ragas.md) |
 | 14 | Hybrid RAG & Reranking | [14-hybrid-rag.md](14-hybrid-rag.md) |
 | 15 | Interview Questions | [15-interview-questions.md](15-interview-questions.md) |
+| 16 | CrewAI | [16-crewai.md](16-crewai.md) |
 
 ---
 
