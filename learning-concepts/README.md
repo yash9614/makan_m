@@ -33,6 +33,14 @@ Inspired by practical agentic AI engineering curricula (Telusko, Krish Naik, Sun
 
 ---
 
+## Must-Do Projects
+
+Hands-on checklists by topic (including CodeBasics exercises from `bode_casics_aigen`):
+
+**[must-do/](must-do/)**
+
+---
+
 ## Related
 
 - [jwt.md](../jwt.md) — Authentication & authorization with JWT
