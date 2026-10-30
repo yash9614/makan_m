@@ -2,7 +2,7 @@
 
 Essential concepts for building RAG systems, agents, and production AI applications.
 
-Inspired by practical agentic AI engineering curricula.
+Inspired by practical agentic AI engineering curricula (Telusko Agentic AI Engineering with Python and related industry material).
 
 ---
 
@@ -19,6 +19,12 @@ Inspired by practical agentic AI engineering curricula.
 | 07 | Multimodal Models | [07-multimodal.md](07-multimodal.md) |
 | 08 | Harness & Guardrails | [08-harness-and-guardrails.md](08-harness-and-guardrails.md) |
 | 09 | Notion | [09-notion.md](09-notion.md) |
+| 10 | Agentic Mindset | [10-agentic-mindset.md](10-agentic-mindset.md) |
+| 11 | LangGraph Basics | [11-langgraph-basics.md](11-langgraph-basics.md) |
+| 12 | Structured Outputs & Pydantic | [12-structured-outputs.md](12-structured-outputs.md) |
+| 13 | Evaluation & RAGAS | [13-evaluation-ragas.md](13-evaluation-ragas.md) |
+| 14 | Hybrid RAG & Reranking | [14-hybrid-rag.md](14-hybrid-rag.md) |
+| 15 | Interview Questions | [15-interview-questions.md](15-interview-questions.md) |
 
 ---
 
@@ -29,4 +35,4 @@ Inspired by practical agentic AI engineering curricula.
 
 ---
 
-*Add more modules as needed (chunking strategies, hybrid search, reranking, evaluation metrics, agent loops, etc.).*
+*Core industry-oriented notes for AI / GenAI / Agentic systems. Updated from Telusko course materials and production patterns.*
