@@ -2,7 +2,7 @@
 
 Essential concepts for building RAG systems, agents, and production AI applications.
 
-Inspired by practical agentic AI engineering curricula (Telusko Agentic AI Engineering with Python and related industry material).
+Inspired by practical agentic AI engineering curricula (Telusko, Krish Naik, Sunny Savita, Bappy, and industry patterns).
 
 ---
 
@@ -26,6 +26,9 @@ Inspired by practical agentic AI engineering curricula (Telusko Agentic AI Engin
 | 14 | Hybrid RAG & Reranking | [14-hybrid-rag.md](14-hybrid-rag.md) |
 | 15 | Interview Questions | [15-interview-questions.md](15-interview-questions.md) |
 | 16 | CrewAI | [16-crewai.md](16-crewai.md) |
+| 17 | Advanced RAG Patterns | [17-advanced-rag-patterns.md](17-advanced-rag-patterns.md) |
+| 18 | Deep Agents | [18-deep-agents.md](18-deep-agents.md) |
+| 19 | Multi-Agent Patterns | [19-multi-agent-patterns.md](19-multi-agent-patterns.md) |
 
 ---
 
@@ -36,4 +39,4 @@ Inspired by practical agentic AI engineering curricula (Telusko Agentic AI Engin
 
 ---
 
-*Core industry-oriented notes for AI / GenAI / Agentic systems. Updated from Telusko course materials and production patterns.*
+*Core industry-oriented notes for AI / GenAI / Agentic systems. Updated from Telusko, Krish Naik, Sunny Savita, Bappy, and production patterns.*
