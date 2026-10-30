@@ -40,6 +40,21 @@ Everything (history, retrieved chunks, tool results, generation) must fit. Produ
 ### 12. When would you use a checkpointer?
 Anytime the agent needs memory across turns or must pause for human approval (HITL). MemorySaver for prototypes; database-backed for production.
 
+### 13. What is the difference between Self-RAG and CRAG?
+CRAG grades the retrieved documents and takes corrective action (rewrite, web search) when confidence is low. Self-RAG additionally lets the model decide whether to retrieve and critique its own generated answer.
+
+### 14. What is Agentic RAG?
+Retrieval is treated as a tool the agent controls. The agent decides whether to retrieve, can retrieve multiple times, decompose queries, and stop when it has enough evidence. Higher cost and latency than basic RAG.
+
+### 15. What is a Deep Agent?
+An opinionated agent harness (on LangChain + LangGraph) that adds planning tools, filesystem access, subagent spawning, and context management for long-horizon tasks.
+
+### 16. CrewAI sequential vs hierarchical?
+Sequential runs tasks in fixed order with outputs flowing forward. Hierarchical adds a manager agent that delegates and reviews. Sequential is simpler and cheaper; hierarchical is more flexible but costs more.
+
+### 17. When would you choose GraphRAG?
+When questions are relational or multi-hop ("how does X relate to Y", comparisons). Pure vector search struggles with these; a knowledge graph helps.
+
 ---
 
 *Use these as starting points. Expand with concrete examples from systems you have built.*
