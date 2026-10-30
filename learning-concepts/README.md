@@ -41,6 +41,14 @@ Hands-on checklists by topic (including CodeBasics exercises from `bode_casics_a
 
 ---
 
+## Sources Registry
+
+All external GitHub repos used or shared:
+
+**[sources/github-sources-registry.md](sources/github-sources-registry.md)**
+
+---
+
 ## Related
 
 - [jwt.md](../jwt.md) — Authentication & authorization with JWT
