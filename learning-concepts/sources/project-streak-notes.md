@@ -32,6 +32,10 @@ UI (Streamlit) → Agent Loop / FastAPI → MCP Client → MCP Server → Tools 
 
 Good end-to-end example of a hybrid agent that can use both structured tools and unstructured RAG knowledge, with MCP as the standard tool interface. Includes `concepts.md` with interview questions.
 
+## Deployment
+
+Currently local-only. Practical deployment path (Docker → Railway/Render → AWS ECS) is documented in [project-streak-deployment.md](project-streak-deployment.md).
+
 ## Related Must-Do
 
 Added to the agents / MCP practice lists.
