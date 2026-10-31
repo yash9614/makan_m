@@ -30,6 +30,7 @@ Inspired by practical agentic AI engineering curricula (Telusko, Krish Naik, Sun
 | 18 | Deep Agents | [18-deep-agents.md](18-deep-agents.md) |
 | 19 | Multi-Agent Patterns | [19-multi-agent-patterns.md](19-multi-agent-patterns.md) |
 | 20 | Production FDE Agent Patterns | [20-production-fde-agent-patterns.md](20-production-fde-agent-patterns.md) |
+| 21 | Text Chunking with Overlap | [21-text-chunking.md](21-text-chunking.md) |
 
 ---
 
