@@ -14,9 +14,13 @@
 4. **LangChain MCP adapter inside an agent**  
    Source: `mcp-learning-path/05-langchain-mcp-adapters`
 
+5. **Project Streak MCP server (streamable HTTP)**  
+   Source: `yash9614/project_streak_` (`mcp_server.py` + FastAPI client)
+
 ## Must-Do Checklist
 
 - [ ] Write one custom MCP server with 2 tools
 - [ ] Connect it from a LangGraph agent
 - [ ] Add basic auth or input validation
 - [ ] Compare hardcoded tools vs MCP tools
+- [ ] Run Project Streak MCP server and call it from the FastAPI backend
