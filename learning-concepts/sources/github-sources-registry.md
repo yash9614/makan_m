@@ -10,6 +10,7 @@ Central list of external GitHub repos and learning materials shared or used for 
 | [krishnaik06](https://github.com/krishnaik06) | Krish Naik | Deep Agents, roadmaps | Production agent patterns |
 | [priya6971](https://github.com/priya6971) | Priya | Interview series | Interview questions |
 | [mayank953](https://github.com/mayank953) | Mayank | Agentic materials | Supplementary |
+| [mayank953/python-ai-crash-course](https://github.com/mayank953/python-ai-crash-course) | Mayank | Python + AI concepts crash course | Beginner AI vocabulary (21 terms), Python notebooks, checkpoint assignments |
 | [nimowhyca/cold-chain-logistics-FDE-Project](https://github.com/nimowhyca/cold-chain-logistics-FDE-Project) | nimowhyca | FDE cold-chain agent | Production hybrid tools + security |
 | [yash9614/mcp-learning-path](https://github.com/yash9614/mcp-learning-path) | yash9614 | MCP learning path | Own path |
 | [yash9614/generative-ai-learning-path](https://github.com/yash9614/generative-ai-learning-path) | yash9614 | GenAI path | Own path |
