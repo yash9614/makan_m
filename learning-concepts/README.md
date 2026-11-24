@@ -33,6 +33,7 @@ Inspired by practical agentic AI engineering curricula (Telusko, Krish Naik, Sun
 | 21 | Text Chunking with Overlap | [21-text-chunking.md](21-text-chunking.md) |
 | 22 | Durable Agents (AgentCore + Temporal) | [22-durable-agents-agentcore-temporal.md](22-durable-agents-agentcore-temporal.md) |
 | 23 | AI Vocabulary for Beginners | [23-ai-vocabulary-beginner.md](23-ai-vocabulary-beginner.md) |
+| 24 | Transformers & LLMs Interview Questions | [24-transformers-llms-interview.md](24-transformers-llms-interview.md) |
 
 ---
 
